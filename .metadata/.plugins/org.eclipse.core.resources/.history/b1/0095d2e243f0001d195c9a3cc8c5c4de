@@ -1,0 +1,62 @@
+package br.ufc.smd.poo.yanna.model;
+
+import java.util.List;
+
+import java.util.ArrayList;
+
+public class Animal {
+   private String name;
+   private List<Animal> predatores;
+   private List<Animal> preys;
+
+   /**
+	 * Create an object
+	 * 
+	 * @param nameObj Name of the object. Can't be *null*!  
+	 */
+   public Animal(String nameObj) {
+		if( nameObj == null ){
+			throw new NullPointerException("null name is not allowed");
+		}
+      this.name = nameObj;
+      this.predatores = new ArrayList<>();
+      this.preys = new ArrayList<>();
+      
+      System.out.println("[ANIMAL] "+ name + " was created succefully");
+   }
+
+   public void addPredator(Animal animal) {
+	   predatores.add(animal);
+   }
+
+   /**
+	 * Add a new prey of the Animal
+	 * 
+	 * @param animal New prey of the object. Can't be *null*!  
+	 */
+   public void addPrey(Animal animal) {
+	   if (animal == null) {}
+	   preys.add(animal);
+   }
+
+   public List<Animal> getPredadores() {
+      return predatores;
+   }
+
+   public List<Animal> getPresas() {
+      return preys;
+   }
+
+	public String getNome() {
+		return name;
+	}
+
+   /**
+	 * Updates the name of the Animal
+	 * 
+	 * @param newName New name of the object. Can't be *null*!  
+	 */
+	public void setNome(String newName) {
+		this.name = newName;
+	}
+}

@@ -1,0 +1,137 @@
+package br.ufc.smd.poo.yanna.model.universidade;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Departament {
+
+	private String name;
+	
+	private String acronym;
+
+	private long code;
+
+	private String description;
+	
+	private List<Professor> professors;
+	
+	private University university;
+
+	
+	public Departament(String name, String acronym, long code, String description, University university) {
+		super();
+		this.name = name;
+		this.acronym = acronym;
+		this.code = code;
+		this.description = description;
+		this.professors = new ArrayList<Professor>();
+		this.university = university;
+		
+		if (university.isDepartament(this) == false) {
+			university.addNewDepartament(this);
+		}
+		System.out.println("[DEPARMENT] '"+ this.acronym + "' was created succefully");
+	}
+
+	public String getAcronym() {
+		return acronym;
+	}
+
+	public void setAcronym(String acronym) {
+		this.acronym = acronym;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public long getCode() {
+		return code;
+	}
+
+	public void setCode(long code) {
+		this.code = code;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public University getUniversity() {
+		return university;
+	}
+
+	public void setUniversity(University university) {
+		System.out.println("[DEPARTAMENT] University of '"+ this.acronym + "' was updated succefully from "+ this.university.getAcronym() +" to " + university.getAcronym() + "!");
+		this.university = university;
+	}
+
+	public List<Professor> getProfessors() {
+		return professors;
+
+	}
+
+
+	public void addProfessor(long siape, String name, String cpf, String email, String address, long phone, long wage) {
+		// TODO make method
+		if (name == null) {
+			throw new NullPointerException("null name is not allowed");
+		}
+		
+		if (isProfessor(siape)) {
+			System.err.println("[UNIVERSITY] Departament '"+ name + "' was already on the departaments list of " + this.acronym + ". It wasn't added.");
+		} else {
+			Professor professor = new Professor(siape, name, cpf, email, address, phone, wage);
+			professors.add(professor);
+			System.out.println("[UNIVERSITY] Departament '"+ acronym + "' added succefully to the departaments list of " + this.acronym + "!");
+			if (departament.getUniversity() != this) {
+				departament.setUniversity(this);
+			}
+		}
+	}
+
+	public void addProfessor(Professor professor) {
+		if (professor == null) {
+			throw new NullPointerException("null professor is not allowed");
+		}
+		if (isProfessor(professor)) {
+			System.err.println("[UNIVERSITY] Professor '"+ professor.getName() + "' was already on the professors list of " + this.acronym + ". It wasn't added.");
+		} else {
+			professors.add(professor);
+			System.out.println("[UNIVERSITY] Professor '"+ professor.getName() + "' added succefully to the professors list of " + this.acronym + "!");
+			if (professor.getDepartament() != this) {
+				professor.setDepartament(this);
+			}
+		}
+
+	}
+	public void showProfessors() {
+		// TODO completar o metodo para imprimir a lista de professores
+	}
+
+	public void getCourses() {}
+	public void addCourse(long code, String name, String shift, long totalHours) {}
+	
+	public boolean isProfessor(Professor professor) {
+		return professors.contains(professor);
+	}
+	
+	public boolean isProfessor(long siape) {
+		if (professors.isEmpty() == false) {
+			for(Professor professor: professors) {
+				if (professor.getSiape() == siape) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+}

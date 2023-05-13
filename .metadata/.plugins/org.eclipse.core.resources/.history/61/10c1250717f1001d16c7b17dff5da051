@@ -1,0 +1,9 @@
+package br.ufc.smd.poo.yanna;
+
+public class UniversityApp {
+
+	public static void main(String[] args) {
+
+	}
+
+}

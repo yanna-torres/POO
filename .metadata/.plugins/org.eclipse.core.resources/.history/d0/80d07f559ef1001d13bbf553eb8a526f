@@ -1,0 +1,5 @@
+package br.ufc.smd.poo.yanna.model.universidade;
+
+public class Course {
+
+}

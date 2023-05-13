@@ -1,0 +1,93 @@
+package br.ufc.smd.poo.yanna.model.universidade;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.ufc.smd.poo.yanna.model.Animal;
+
+public class University {
+		private String name;
+
+		private String address;
+
+		private long foundingYear;
+		
+		private List<Departament> departaments;
+
+		public University(String name, String address, long foundingYear) {
+			super();
+			this.name = name;
+			this.address = address;
+			this.foundingYear = foundingYear;
+			this.departaments = new ArrayList<Departament>();
+			System.out.println("[UNIVERSITY] '"+ name + "' was created succefully");
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getAddress() {
+			return address;
+		}
+
+		public void setAddress(String address) {
+			this.address = address;
+		}
+
+		public long getFoundingYear() {
+			return foundingYear;
+		}
+
+		public void setFoundingYear(long foundingYear) {
+			this.foundingYear = foundingYear;
+		}
+		
+		/**
+		 * Add a new Departament of the University
+		 * 
+		 * @param name Name of the departament. Can't be *null*!
+		 * @param code Code of the departament.
+		 * @param description Description of the main actions taken inside the departament. Like main research areas, etc.  
+		 */
+		public void addNewDepartament(String name, long code, String description) {
+			if (name == null) {
+				throw new NullPointerException("null name is not allowed");
+			}
+			boolean isAlready = false;
+			if (departaments.isEmpty() == false) {
+				for(Departament dep: departaments) {
+					if (dep.getCode() == code) {
+						isAlready = true;
+					}
+				}
+			}
+			if (isAlready) {
+				System.err.println("[UNIVERSITY] Departament '"+ name + "' was already on the departaments list of " + name + ". It wasn't added.");
+			} else {
+				Departament dep = new Departament(name, code, description);
+				departaments.add(dep);
+				System.out.println("[UNIVERSITY] Departament '"+ name + "' added succefully to the departaments list of " + name + "!");
+			}
+		}
+
+		public List<Departament> getDepartaments() {
+			return departaments;
+		}
+		
+
+		
+		public void showPredators() {
+			System.out.println("[ANIMAL] Predators of " + name + ":");
+	        for (Animal predator : predators) {
+	            System.out.println("         " + predator.getName());
+	        }
+	        System.out.println("  ");
+			
+		}
+
+}

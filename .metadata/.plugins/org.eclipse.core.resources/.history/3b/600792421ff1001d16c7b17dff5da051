@@ -1,0 +1,19 @@
+package br.ufc.smd.poo.yanna;
+
+import br.ufc.smd.poo.yanna.model.universidade.*;
+
+public class UniversityApp {
+
+	public static void main(String[] args) {
+		University ufc = new University("Universidade Federal do Ceara","UFC", "Benfica", 1954);
+		ufc.showDepartaments();
+		ufc.addNewDepartament("IUVI", 026541, null);
+		ufc.addNewDepartament("IUVI", 026541, null);
+		Departament ica = new Departament("ICA", 65461, null);
+		ufc.addNewDepartament(ica);
+		ufc.addNewDepartament(ica);
+		ufc.showDepartaments();
+
+	}
+
+}

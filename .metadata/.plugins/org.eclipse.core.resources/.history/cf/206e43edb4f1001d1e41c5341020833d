@@ -1,0 +1,99 @@
+package br.ufc.smd.poo.yanna.model.universidade;
+
+public class Student {
+	private long registrationNumber;
+
+	private String name;
+
+	private String cpf;
+
+	private String emai;
+
+	private String address;
+
+	private long phoneNumber;
+	
+	private Course course;
+
+	public Student(long registrationNumber, String name, String cpf, String emai, String address, long phoneNumber) {
+		super();
+		this.registrationNumber = registrationNumber;
+		this.name = name;
+		this.cpf = cpf;
+		this.emai = emai;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		System.out.println("[STUDENT] '" + this.name +"' was created succefully!");
+	}
+
+	public Student(long registrationNumber, String name, String cpf, String emai, String address, long phoneNumber, Course course) {
+		super();
+		this.registrationNumber = registrationNumber;
+		this.name = name;
+		this.cpf = cpf;
+		this.emai = emai;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.course = course;
+		System.out.println("[STUDENT] '" + this.name +"' was created succefully!");
+		if (course.isStudent(registrationNumber)) {}
+	}
+
+	public long getRegistrationNumber() {
+		return registrationNumber;
+	}
+
+	public void setRegistrationNumber(long registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getEmai() {
+		return emai;
+	}
+
+	public void setEmai(String emai) {
+		this.emai = emai;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+
+}

@@ -1,0 +1,12 @@
+package br.ufc.smd.poo.yanna;
+
+import br.ufc.smd.poo.yanna.model.Animal;
+
+public class App {
+
+	public static void main(String[] args) {
+		Animal zebra = new Animal("zebrinha");
+		Animal lion = new Animal("leaozinho");
+	}
+
+}

@@ -1,0 +1,13 @@
+package br.ufc.smd.poo.yanna;
+
+import br.ufc.smd.poo.yanna.model.universidade.University;
+
+public class UniversityApp {
+
+	public static void main(String[] args) {
+		University ufc = new University("Universidade Federal do Ceara - UFC", "Benfica", 1954);
+		ufc.getName();
+
+	}
+
+}
