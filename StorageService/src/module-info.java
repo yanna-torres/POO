@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Yanna
+ *
+ */
+module StorageService {
+}
