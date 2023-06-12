@@ -1,4 +1,4 @@
-package lista05br.ufc.smd.poo.ligacaotardia.app;
+package br.ufc.smd.poo.ligacaotardia.app;
 
 import br.ufc.smd.poo.ligacaotardia.model.*;
 
