@@ -44,5 +44,4 @@ public class MergeSort extends Sort {
 			a[k++] = r[j++];
 		}
 	}
-
 }

@@ -1,7 +1,6 @@
 package br.ufc.smd.poo.sort.model;
 
 public class Sort {
-
 	public void sort(int array[]) {
 		int length = array.length;
 		for (int i = 0; i < length - 1; i++) {
